@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "af713cc6-cbe5-4c5f-9f78-37124b570631",
+		"name": "Payment Gateway API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44644377"
+	},
+	"item": [
+		{
+			"name": "Register Merchant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"merchant@test.com\",\n  \"password\":\"123456\",\n  \"business_name\":\"Test Store\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"merchant@test.com\",\n  \"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction History",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_JWT"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/transactions/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"transactions",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analytics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_JWT"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/analytics/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"analytics",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rotate Keys",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_JWT"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/merchant/rotate-keys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"merchant",
+						"rotate-keys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
